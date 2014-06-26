@@ -10,7 +10,7 @@
 
 @implementation Gameplay
 {
-    CCPhysicsNode *_physicsNodes;
+    CCPhysicsNode *_physicsNode;
     CCNode *_catapultArm;
 }
 
@@ -37,7 +37,7 @@
     penguin.position = ccpAdd(_catapultArm.position, ccp(16, 50));
     
     //add the penguin to the physics node
-    [_physicsNodes addChild:penguin];
+    [_physicsNode addChild:penguin];
     
     //manualy create and apply force to launch penguin
     CGPoint launchDirection = ccp(1,0);
