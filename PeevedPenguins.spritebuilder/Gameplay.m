@@ -54,12 +54,12 @@
     }
 }
 
-/*- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     _mouseJointNode.position = touchLocation;
-}*/
+}
 
 -(void)launchPenguin
 {
@@ -83,7 +83,7 @@
     
 }
 
-/*- (void)releaseCatapult
+- (void)releaseCatapult
 {
     if (_mouseJoint != nil)
     {
@@ -91,7 +91,7 @@
         [_mouseJoint invalidate];
         _mouseJoint = nil;
     }
-}*/
+}
 
 
 
@@ -101,7 +101,7 @@
     NSLog(@"retry");
 }
 
-/*-(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
     // when touches end, meaning the user releases their finger, release the catapult
     [self releaseCatapult];
@@ -112,7 +112,7 @@
     // when touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
     [self releaseCatapult];
 }
-*/
+
 
 
 @end
