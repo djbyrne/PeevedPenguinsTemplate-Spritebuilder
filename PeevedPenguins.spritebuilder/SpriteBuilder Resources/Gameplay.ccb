@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>11</integer>
+	<integer>12</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -883,12 +883,10 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>9</integer>
+				<integer>11</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -918,8 +916,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>33</real>
-							<real>293.99996948242188</real>
+							<real>34</real>
+							<real>289</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -932,8 +930,8 @@
 						<string>Point</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
-							<real>0.5</real>
+							<real>0.43862453103065491</real>
+							<real>0.39111328125</real>
 						</array>
 					</dict>
 					<dict>
@@ -956,7 +954,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string></string>
+							<string>retry</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1211,6 +1209,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

@@ -59,6 +59,7 @@
 -(void)retry {
     //reload level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
+    NSLog(@"retry");
 }
 
 
