@@ -256,7 +256,7 @@
 					<key>type</key>
 					<string>Float</string>
 					<key>value</key>
-					<real>60</real>
+					<real>120</real>
 				</dict>
 				<dict>
 					<key>name</key>
@@ -264,7 +264,7 @@
 					<key>type</key>
 					<string>Float</string>
 					<key>value</key>
-					<real>400</real>
+					<real>500</real>
 				</dict>
 			</array>
 			<key>selected</key>

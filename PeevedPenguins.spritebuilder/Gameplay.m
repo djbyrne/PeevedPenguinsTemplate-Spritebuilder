@@ -50,7 +50,7 @@
         _mouseJointNode.position = touchLocation;
         
         // setup a spring joint between the mouseJointNode and the catapultArm
-        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:50.f stiffness:1000 damping:10];
+        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:50.f stiffness:1000 damping:40];
     }
 }
 
