@@ -38,6 +38,8 @@
     _pullbackNode.physicsBody.collisionMask = @[];
     
     _mouseJointNode.physicsBody.collisionMask = @[];
+    
+    _physicsNode.collisionDelegate = self;
 }
 
 //this is called eveytime we touch the screen
