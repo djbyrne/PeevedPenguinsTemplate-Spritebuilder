@@ -148,7 +148,8 @@
     [self releaseCatapult];
 }
 
-- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
+- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
     CCLOG(@"COLLISION");
     float energy = [pair totalKineticEnergy];
     
