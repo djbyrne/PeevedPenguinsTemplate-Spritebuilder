@@ -146,7 +146,7 @@
     [self releaseCatapult];
 }
 
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCSprite *)nodeA wildcard:(CCNode *)nodeB
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCSprite *)nodeA wildcard:(CCSprite *)nodeB
 {
     CCLOG(@"Something collided with a seal!");
 }
