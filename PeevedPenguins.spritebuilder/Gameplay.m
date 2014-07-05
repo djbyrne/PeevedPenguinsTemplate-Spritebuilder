@@ -8,7 +8,7 @@
 
 #import "Gameplay.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-#import "Seal.m"
+#import "Seal.h"
 
 @implementation Gameplay
 {
