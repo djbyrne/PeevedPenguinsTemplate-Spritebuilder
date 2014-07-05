@@ -150,7 +150,8 @@
 
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
 {
-    NSLog(@"COLLISION");
+    NSLog(@"HELLO");
+    return;
     float energy = [pair totalKineticEnergy];
     
     // if energy is large enough, remove the seal
