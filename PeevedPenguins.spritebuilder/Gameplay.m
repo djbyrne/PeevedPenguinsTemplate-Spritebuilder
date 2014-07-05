@@ -148,7 +148,7 @@
     [self releaseCatapult];
 }
 
-- (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+- (BOOL)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
 {
     NSLog(@"HELLO");
     float energy = [pair totalKineticEnergy];
@@ -159,6 +159,7 @@
             [self sealRemoved:nodeA];
         } key:nodeA];
     }
+    return TRUE;
 }
 
 - (void)sealRemoved:(CCNode *)seal {
