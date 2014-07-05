@@ -9,5 +9,6 @@
 #import "CCSprite.h"
 
 @interface Seal : CCSprite
+- (void)didLoadFromCCB;
 
 @end

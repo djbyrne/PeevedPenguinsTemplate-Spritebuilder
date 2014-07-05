@@ -25,6 +25,7 @@
 //this is called when the CCB file is loaded
 -(void)didLoadFromCCB
 {
+    
     //tells the scene to accept touches
     self.userInteractionEnabled = TRUE;
     
@@ -145,7 +146,7 @@
     [self releaseCatapult];
 }
 
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair Seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
 {
     CCLOG(@"Something collided with a seal!");
 }
