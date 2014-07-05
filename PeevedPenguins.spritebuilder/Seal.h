@@ -8,7 +8,7 @@
 
 #import "CCSprite.h"
 
-@interface Seal : CCSprite <CCPhysicsCollisionDelegate>
+@interface Seal : CCSprite
 
 
 @end
