@@ -145,6 +145,11 @@
     [self releaseCatapult];
 }
 
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildCard:(CCNode *)nodeB
+{
+    CCLOG(@"collision");
+}
+
 
 
 @end
