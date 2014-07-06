@@ -12,7 +12,7 @@
 
 - (void)didLoadFromCCB {
     CCLOG(@"COLLISION");
-    self.physicsBody.collisionGroup = @"Seal";
+    self.physicsBody.collisionGroup = @"seal";
 }
 
 @end
