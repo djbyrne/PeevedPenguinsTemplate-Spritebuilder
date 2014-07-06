@@ -10,7 +10,10 @@
 
 @implementation Penguin
 
-
+- (void)didLoadFromCCB {
+    //CCLOG(@"COLLISION");
+    self.physicsBody.collisionGroup = @"penguin";
+}
 
 
 @end
