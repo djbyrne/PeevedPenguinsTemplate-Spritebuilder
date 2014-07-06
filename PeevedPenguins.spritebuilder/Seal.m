@@ -11,6 +11,7 @@
 @implementation Seal
 
 - (void)didLoadFromCCB {
+    CCLOG(@"COLLISION");
     self.physicsBody.collisionGroup = @"seal";
 }
 
