@@ -143,7 +143,7 @@ static const float MIN_SPEED =5.f;
 - (void)releaseCatapult {
     if (_mouseJoint != nil)
     {
-        _currentPenguin.launched = TRUE;
+        
         
         // releases the joint and lets the catapult snap back
         [_mouseJoint invalidate];
@@ -160,6 +160,8 @@ static const float MIN_SPEED =5.f;
         _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
         [_contentNode runAction:_followPenguin];
     }
+    
+    _currentPenguin.launched = TRUE;
 }
 
 
