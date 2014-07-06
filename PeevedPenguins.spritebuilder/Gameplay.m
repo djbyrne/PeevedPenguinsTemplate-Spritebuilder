@@ -9,6 +9,7 @@
 #import "Gameplay.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "Seal.h"
+#import "Penguin.h"
 
 @implementation Gameplay
 {
@@ -19,9 +20,40 @@
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
     CCPhysicsJoint *_mouseJoint;
-    CCNode *_currentPenguin;
+    Penguin *_currentPenguin;
     CCPhysicsJoint *_penguinCatapltJoint;
+    CCAction *_followPenguin;
+    
 }
+
+static const float MIN_SPEED =5.f;
+
+- (void)update:(CCTime)delta
+{
+    if(_currentPenguin.launched)
+    {
+        // if speed is below minimum speed, assume this attempt is over
+        if (ccpLength(_currentPenguin.physicsBody.velocity) < MIN_SPEED){
+            [self nextAttempt];
+            return;
+        }
+    
+        int xMin = _currentPenguin.boundingBox.origin.x;
+    
+        if (xMin < self.boundingBox.origin.x) {
+            [self nextAttempt];
+            return;
+        }
+    
+        int xMax = xMin + _currentPenguin.boundingBox.size.width;
+        
+        if (xMax > (self.boundingBox.origin.x + self.boundingBox.size.width)) {
+            [self nextAttempt];
+            return;
+        }
+    }
+}
+
 
 
 //this is called when the CCB file is loaded
@@ -61,7 +93,7 @@
     }
     
     //create a penguin
-    _currentPenguin = [CCBReader load:@"Penguin"];
+    _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
     
     //initially position it on the scoop
     CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34,138)];
@@ -111,6 +143,8 @@
 - (void)releaseCatapult {
     if (_mouseJoint != nil)
     {
+        _currentPenguin.launched = TRUE;
+        
         // releases the joint and lets the catapult snap back
         [_mouseJoint invalidate];
         _mouseJoint = nil;
@@ -122,10 +156,19 @@
         //allow rotation
         _currentPenguin.physicsBody.allowsRotation = true;
         
-        //follow flying penguin
-        CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
-        [_contentNode runAction:follow];
+        // follow the flying penguin
+        _followPenguin = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        [_contentNode runAction:_followPenguin];
     }
+}
+
+
+- (void)nextAttempt {
+    _currentPenguin = nil;
+    [_contentNode stopAction:_followPenguin];
+    
+    CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
+    [_contentNode runAction:actionMoveTo];
 }
 
 
