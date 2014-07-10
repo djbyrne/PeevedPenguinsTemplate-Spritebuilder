@@ -222,8 +222,6 @@ static const float MIN_SPEED =5.f;
     
     //finally,remove the destriyed seal
     [seal removeFromParent];
-    
-    [explosion removeFromParent];
    
 }
 
