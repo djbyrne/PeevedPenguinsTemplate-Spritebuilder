@@ -207,6 +207,20 @@ static const float MIN_SPEED =5.f;
 }
 
 - (void)sealRemoved:(CCNode *)seal {
+    
+    //load particle effect
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
+    
+    //make the particle effect clean itself up,once its complete
+    explosion.autoRemoveOnFinish = TRUE;
+    
+    //place the particle effect on the seals position
+    explosion.position = seal.position;
+    
+    //add the particle effect to the same node the seal is on
+    [seal.parent addChild:explosion];
+    
+    //finally,remove the destriyed seal
     [seal removeFromParent];
    
 }
