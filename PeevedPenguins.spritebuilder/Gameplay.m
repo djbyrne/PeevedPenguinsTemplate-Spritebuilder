@@ -19,6 +19,9 @@
     CCNode *_contentNode;
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
+    CCNode *_penguin1;
+    CCNode *_penguin2;
+    CCNode *_penguin3;
     CCPhysicsJoint *_mouseJoint;
     Penguin *_currentPenguin;
     CCPhysicsJoint *_penguinCatapltJoint;
@@ -231,6 +234,8 @@ int _penguinCount = 3;
     [seal removeFromParent];
    
 }
+
+
 
 
 
