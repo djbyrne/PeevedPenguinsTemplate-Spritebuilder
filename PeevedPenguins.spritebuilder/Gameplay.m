@@ -94,12 +94,11 @@ int _penguinCount = 3;
         _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
     }
     
-    //create a penguin
+    //create a penguin if one is available
     if(_penguinCount>0 &&_penguinCount<4)
     {
         _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
     }
-    _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
     
     //initially position it on the scoop
     CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34,138)];
@@ -174,7 +173,7 @@ int _penguinCount = 3;
 - (void)nextAttempt {
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
-    _penguinCount--;
+    _penguinCount-=1;
     
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
     [_contentNode runAction:actionMoveTo];
