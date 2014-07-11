@@ -28,6 +28,8 @@
 
 static const float MIN_SPEED =5.f;
 
+int _penguinCount = 3;
+
 - (void)update:(CCTime)delta
 {
     if(_currentPenguin.launched)
@@ -93,6 +95,10 @@ static const float MIN_SPEED =5.f;
     }
     
     //create a penguin
+    if(_penguinCount>0 &&_penguinCount<4)
+    {
+        _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
+    }
     _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
     
     //initially position it on the scoop
@@ -168,6 +174,7 @@ static const float MIN_SPEED =5.f;
 - (void)nextAttempt {
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
+    _penguinCount--;
     
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
     [_contentNode runAction:actionMoveTo];
