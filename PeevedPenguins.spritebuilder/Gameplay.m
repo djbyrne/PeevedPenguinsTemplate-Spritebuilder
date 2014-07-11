@@ -98,7 +98,7 @@ int _penguinCount = 3;
     if(_penguinCount>0 &&_penguinCount<4)
     {
         _currentPenguin = (Penguin*)[CCBReader load:@"Penguin"];
-    }
+    
     
     //initially position it on the scoop
     CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34,138)];
@@ -114,6 +114,7 @@ int _penguinCount = 3;
     
     //create a joint to keep the penguin in place
     _penguinCatapltJoint = [CCPhysicsJoint connectedPivotJointWithBodyA:_currentPenguin.physicsBody bodyB:_catapultArm.physicsBody anchorA:_currentPenguin.anchorPointInPoints];
+    }
 }
 
 - (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
