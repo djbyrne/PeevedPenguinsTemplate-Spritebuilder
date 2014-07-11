@@ -19,8 +19,8 @@
     CCNode *_contentNode;
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
-    CCNode *_penguin1;
-    CCNode *_penguin2;
+    CCSprite *_penguin1;
+    CCSprite *_penguin2;
     CCNode *_penguin3;
     CCPhysicsJoint *_mouseJoint;
     Penguin *_currentPenguin;
@@ -178,6 +178,7 @@ int _penguinCount = 3;
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
     _penguinCount-=1;
+    [self penguinRemoved];
     
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
     [_contentNode runAction:actionMoveTo];
@@ -235,6 +236,18 @@ int _penguinCount = 3;
    
 }
 
+
+- (void)penguinRemoved {
+    
+   
+    
+    if(_penguinCount==2)
+    {
+        _penguin2=nil;
+    }
+        
+    
+}
 
 
 
