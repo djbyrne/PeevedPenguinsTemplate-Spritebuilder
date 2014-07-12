@@ -178,7 +178,7 @@ int _penguinCount = 3;
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
     _penguinCount-=1;
-    [_penguin1 removeFromParent];
+    [_penguin2 removeFromParent];
     
     
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
@@ -238,15 +238,11 @@ int _penguinCount = 3;
 }
 
 
-- (void)penguinRemoved {
+- (void)penguinRemoved:(CCNode *)animation{
     
    
     
-    if(_penguinCount==2)
-    {
-        _penguin2=nil;
-    }
-        
+    [animation removeFromParent];
     
 }
 
