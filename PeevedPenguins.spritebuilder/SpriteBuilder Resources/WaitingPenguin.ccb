@@ -2311,7 +2311,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>WaitingPenguin.ccb</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>

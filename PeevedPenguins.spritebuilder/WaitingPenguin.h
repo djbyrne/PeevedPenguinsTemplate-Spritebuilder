@@ -9,5 +9,6 @@
 #import "CCSprite.h"
 
 @interface WaitingPenguin : CCSprite
+- (void)didLoadFromCCB;
 
 @end
