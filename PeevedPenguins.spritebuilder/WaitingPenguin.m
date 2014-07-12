@@ -18,7 +18,7 @@
     // call method to start animation after random delay
     [self performSelector:@selector(startBlinkAndJump) withObject:nil afterDelay:delay];
     
-    self.physicsBody.collisionGroup = @"animation";
+    
 }
 
 - (void)startBlinkAndJump
