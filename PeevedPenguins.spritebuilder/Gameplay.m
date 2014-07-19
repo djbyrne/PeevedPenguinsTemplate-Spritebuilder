@@ -177,8 +177,6 @@ int _penguinCount = 3;
     _currentPenguin = nil;
     [_contentNode stopAction:_followPenguin];
     _penguinCount-=1;
-    [_penguin3 removeFromParent];
-    
         
     CCActionMoveTo *actionMoveTo = [CCActionMoveTo actionWithDuration:1.f position:ccp(0, 0)];
     [_contentNode runAction:actionMoveTo];
