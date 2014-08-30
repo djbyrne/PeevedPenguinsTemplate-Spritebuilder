@@ -188,6 +188,7 @@ int _penguinCount = 3;
     //reload level
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
     NSLog(@"retry");
+    _penguinCount = 3;
 }
 
 -(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
